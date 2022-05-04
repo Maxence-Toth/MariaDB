@@ -19,7 +19,7 @@ AND create_date <= '2021-01-01'
 
 SELECT * 
 FROM `student`
-WHERE email LIKE "%.fr%"
+WHERE email LIKE "%.fr%" 
 OR created_at <= "2021-01-10";
 
 
@@ -41,7 +41,10 @@ AND created_at <= "2021-01-10";
 
 SELECT *
 FROM `student`
-WHERE "2021-01-01" < created_at <= "2021-01-10";
+WHERE "2021-01-01" < created_at 
+AND created_at <= "2021-01-10";
+
+-- - "utiliser and "
 
 
 
@@ -72,7 +75,8 @@ AND start_date <= "2021-07-01";
 
 SELECT * 
 FROM `project` 
-WHERE "2021-01-01" >= start_date <= "2021-07-01"; 
+WHERE "2021-01-01" <= start_date
+AND start_date <= "2021-07-01"; 
 
 
 
@@ -83,8 +87,7 @@ WHERE "2021-01-01" >= start_date <= "2021-07-01";
 
 SELECT * 
 FROM `student` 
-WHERE email like "%.fr" 
-AND created_at <= "2021-01-10"
+WHERE (email like "%.fr" AND created_at <= "2021-01-10") 
 OR project_id != "NULL";
 
 -- Exo 3.8
@@ -94,6 +97,5 @@ OR project_id != "NULL";
 
 SELECT * 
 FROM `student`
-WHERE email LIKE "%.fr%"
-AND created_at <= "2021-01-10" 
-AND project_id = "NULL" 
+WHERE (email LIKE "%.fr%" AND created_at <= "2021-01-10")
+AND project_id = "NULL";

@@ -26,8 +26,8 @@ WHERE id = 6
 -- - nom : SASS
 -- - description : aucune
 
-INSERT INTO `tag` (`id`, `name`, `description`)
-VALUES (NULL, 'SASS', NULL);
+INSERT INTO `tag` (`name`)
+VALUES ('SASS');
 
 -- Exo 2.2
 -- Insérez une school year :
@@ -75,7 +75,12 @@ DELETE FROM `student_tag` WHERE (`student_id` = 100 AND `tag_id` = 10);
 -- - student : Arthur Lacombe
 -- - projet : Dicta quia at qui
 
-DELETE FROM `student` WHERE (`id` = 16 AND `project_id` = 6); 
+-- DELETE FROM `project` WHERE (`id` = 16 AND `project_id` = 6); 
+
+UPDATE `student` SET `project_id` = NULL
+WHERE `project_id` = 6 
+
+-- - A revoir pour rajouter le student et modifier l'exo avec Update ()
 
 
 -- Exo 2.8
